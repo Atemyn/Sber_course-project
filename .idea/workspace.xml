@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/CustomRestExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/JacksonConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/WebConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/store/DocumentStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/documents/controller/DocumentControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/template/example/controller/AbstractWebMvcTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/config/dev.webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/config/prod.webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/dist/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/dist/main.js.LICENSE.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/dist/main.js.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/dist/manifest.237672d372ac2dbc41abcad025b1df1d.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/nginx/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/public/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/Router.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/api/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/api/cruds-api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/configureStore.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/AbstractEditForm/AbstractEditForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/AbstractEditForm/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/fieldInputText.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/table/table.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/table/tableHead.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/table/toolBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/documents/DocumentDetails.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/documents/DocumentList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/containers/documents/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/reducers/abstract-entity-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/reducers/error-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/src/routes.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2XqqLv6P2snxddZcBSzoNmHrxUA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-15",
+    "last_opened_file_path": "B:/Programming/Spring/course-project/ui",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="B:\Programming\Spring\course-project\ui" />
+      <recent name="B:\Programming\Spring\course-project" />
+      <recent name="B:\Programming\Spring\course-project\backend" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.template.example.documents.store" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="gradlew" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/gradlew" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="course-project.backend.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="course-project.backend.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Shell Script.gradlew" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="" />
+      <created>1699366905530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1699366905530</updated>
+      <workItem from="1699366907312" duration="3806000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

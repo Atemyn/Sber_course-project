@@ -1,0 +1,5 @@
+rootProject.name = 'course-project'
+
+include 'backend'
+include 'ui'
+
