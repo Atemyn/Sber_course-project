@@ -4,73 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/CustomRestExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/JacksonConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/WebConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdsDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/store/DocumentStore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/logback-spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/documents/controller/DocumentControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/test/java/ru/template/example/controller/AbstractWebMvcTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/babel.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/config/dev.webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/config/prod.webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/dist/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/dist/main.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/dist/main.js.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/dist/manifest.237672d372ac2dbc41abcad025b1df1d.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/nginx/nginx.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/public/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/Router.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/api/axios.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/api/cruds-api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/configureStore.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/Loader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/AbstractEditForm/AbstractEditForm.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/AbstractEditForm/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/fieldInputText.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/table/table.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/table/tableHead.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/common/components/table/toolBar.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/documents/DocumentDetails.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/documents/DocumentList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/containers/documents/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/reducers/abstract-entity-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/reducers/error-reducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/src/routes.js" afterDir="false" />
+    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[FEATURE] Подключен liquidbase, сконфигурирован docker-compose.yml для клиента, сервера и базы данных, добавлен базовый Entity для Document">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Document.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/db/changelog/changes/v0001.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +25,51 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/backend">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="course-project" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="course-project" type="f1a62948:ProjectNode" />
+                <item name="backend" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="course-project" type="f1a62948:ProjectNode" />
+                <item name="backend" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="course-project" type="f1a62948:ProjectNode" />
+                <item name="backend" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,31 +84,61 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "corretto-15",
-    "last_opened_file_path": "B:/Programming/Spring/course-project/ui",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-15&quot;,
+    &quot;last_opened_file_path&quot;: &quot;B:/Programming/Spring/course-project/ui&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;6281b8684a583f8f1f6e98118f07510b&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="B:\Programming\Spring\course-project\ui" />
       <recent name="B:\Programming\Spring\course-project" />
       <recent name="B:\Programming\Spring\course-project\backend" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="B:\Programming\Spring\course-project" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.template.example.documents.store" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Gradle.course-project:backend [bootJar]">
+    <configuration name="course-project:backend [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="gradlew" type="ShConfigurationType" temporary="true">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
@@ -151,6 +170,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.course-project:backend [bootJar]" />
         <item itemvalue="Shell Script.gradlew" />
       </list>
     </recent_temporary>
@@ -163,8 +183,22 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699366905530</updated>
-      <workItem from="1699366907312" duration="3806000" />
+      <workItem from="1699366907312" duration="4645000" />
+      <workItem from="1699448144667" duration="3697000" />
+      <workItem from="1699452374973" duration="748000" />
+      <workItem from="1699460752542" duration="322000" />
+      <workItem from="1699704232093" duration="7213000" />
+      <workItem from="1699886921338" duration="5047000" />
+      <workItem from="1699953630892" duration="6222000" />
     </task>
+    <task id="LOCAL-00001" summary="Создан шаблон курсового проекта">
+      <created>1699374273562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699374273562</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,5 +214,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Создан шаблон курсового проекта" />
+    <MESSAGE value="[FEATURE] Подключен liquidbase, сконфигурирован docker-compose.yml для клиента, сервера и базы данных, добавлен базовый Entity для Document" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Подключен liquidbase, сконфигурирован docker-compose.yml для клиента, сервера и базы данных, добавлен базовый Entity для Document" />
   </component>
 </project>

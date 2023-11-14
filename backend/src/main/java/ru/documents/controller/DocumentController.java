@@ -54,5 +54,4 @@ public class DocumentController {
     public void deleteAll(@RequestBody IdsDto idsDto) {
         service.deleteAll(idsDto.getIds());
     }
-
 }

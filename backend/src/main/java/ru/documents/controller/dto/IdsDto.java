@@ -10,5 +10,4 @@ public class IdsDto {
      * Множество номеров документов.
      */
     private Set<Long> ids;
-
 }
