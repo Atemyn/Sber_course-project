@@ -33,14 +33,14 @@ public class DocumentDto {
     private String description;
 
     /**
-     * Пациент.
-     */
-    private String patient;
-
-    /**
      * Дата документа.
      */
     private Date date;
+
+    /**
+     * Пациент.
+     */
+    private String patient;
 
     /**
      * Статус.

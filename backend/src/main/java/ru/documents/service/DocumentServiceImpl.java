@@ -1,67 +1,63 @@
 package ru.documents.service;
 
-import org.apache.commons.lang3.RandomUtils;
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import ru.documents.controller.dto.DocumentDto;
-import ru.documents.controller.dto.Status;
-import ru.documents.store.DocumentStore;
+import ru.documents.entity.Document;
+import ru.documents.mapping.DocumentMapper;
+import ru.documents.repository.DocumentRepository;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Service
+@Primary
+@RequiredArgsConstructor
 public class DocumentServiceImpl implements DocumentService {
+    private final DocumentMapper mapper;
 
+    private final DocumentRepository repository;
+
+    @Override
     public DocumentDto save(DocumentDto documentDto) {
-        if (documentDto.getId() == null) {
-            documentDto.setId(RandomUtils.nextLong(0L, 999L));
-        }
-        documentDto.setDate(new Date());
-        if (documentDto.getStatus() == null) {
-            documentDto.setStatus(Status.of("NEW", "Новый"));
-        }
-        DocumentStore.getInstance().getDocumentDtos().add(documentDto);
-        return documentDto;
+        return mapper.modelToDto(repository.save(
+                mapper.dtoToModel(documentDto)));
     }
 
-
-    public DocumentDto update(DocumentDto documentDto) {
-        List<DocumentDto> documentDtos = DocumentStore.getInstance().getDocumentDtos();
-        Optional<DocumentDto> dto = documentDtos.stream()
-                .filter(d -> d.getId().equals(documentDto.getId())).findFirst();
-        if (dto.isPresent()) {
-            delete(documentDto.getId());
-            save(documentDto);
-        }
-        return documentDto;
-    }
-
-    public void delete(Long id) {
-        List<DocumentDto> documentDtos = DocumentStore.getInstance().getDocumentDtos();
-        List<DocumentDto> newList = documentDtos.stream()
-                .filter(d -> !d.getId().equals(id)).collect(Collectors.toList());
-        documentDtos.clear();
-        documentDtos.addAll(newList);
-    }
-
+    @Override
     public void deleteAll(Set<Long> ids) {
-        List<DocumentDto> documentDtos = DocumentStore.getInstance().getDocumentDtos();
-        List<DocumentDto> newList = documentDtos.stream()
-                .filter(d -> !ids.contains(d.getId())).collect(Collectors.toList());
-        documentDtos.clear();
-        documentDtos.addAll(newList);
+        for (Long id : ids) {
+            deleteById(id);
+        }
     }
 
+    @Override
+    public void deleteById(Long id) {
+        var document = getById(id);
+        repository.delete(document);
+    }
+
+    @Override
+    public DocumentDto update(DocumentDto documentDto) {
+        var existingDocument = getById(documentDto.getId());
+        repository.delete(existingDocument);
+        return mapper.modelToDto(repository.save(mapper.dtoToModel(documentDto)));
+    }
+
+    @Override
     public List<DocumentDto> findAll() {
-        return DocumentStore.getInstance().getDocumentDtos();
+        return mapper.toListDto(repository.findAll());
     }
 
-    public DocumentDto get(Long id) {
-        List<DocumentDto> documentDtos = DocumentStore.getInstance().getDocumentDtos();
-        return documentDtos.stream()
-                .filter(d -> d.getId().equals(id)).findFirst().get();
+    @Override
+    public DocumentDto findById(Long id) {
+        return Optional.of(getById(id)).map(mapper::modelToDto).get();
+    }
+
+    private Document getById(Long id) {
+        return repository.findById(id).orElseThrow(() -> new RuntimeException(
+                "Book with id: " + id + " not found"));
     }
 }

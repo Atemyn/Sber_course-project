@@ -26,7 +26,7 @@ public interface DocumentService {
      * Удалить документ по ид
      * @param id идентификатор документа
      */
-    void delete(Long id);
+    void deleteById(Long id);
 
     /**
      * Обновить документ
@@ -46,5 +46,5 @@ public interface DocumentService {
      * @param id идентификатор
      * @return документ
      */
-    DocumentDto get(Long id);
+    DocumentDto findById(Long id);
 }
