@@ -1,19 +1,22 @@
 package ru.documents.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import ru.documents.controller.dto.DocumentDto;
+import ru.documents.controller.dto.Status;
+import ru.documents.controller.dto.StatusEnum;
 import ru.documents.entity.Document;
 import ru.documents.mapping.DocumentMapper;
 import ru.documents.repository.DocumentRepository;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
-@Primary
 @RequiredArgsConstructor
 public class DocumentServiceImpl implements DocumentService {
     private final DocumentMapper mapper;
@@ -22,6 +25,12 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public DocumentDto save(DocumentDto documentDto) {
+        documentDto.setId(null);
+        documentDto.setDate(new Date());
+        documentDto.setStatus(Status.of(StatusEnum.NEW.name(),
+                StatusEnum.NEW.getExtendedName()));
+        Logger.getLogger(DocumentServiceImpl.class.getName())
+                .log(Level.INFO, "Saving document: " + documentDto);
         return mapper.modelToDto(repository.save(
                 mapper.dtoToModel(documentDto)));
     }
@@ -41,8 +50,9 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public DocumentDto update(DocumentDto documentDto) {
-        var existingDocument = getById(documentDto.getId());
-        repository.delete(existingDocument);
+        repository.delete(getById(documentDto.getId()));
+        documentDto.setStatus(Status.of(StatusEnum.IN_PROCESS.name(),
+                StatusEnum.IN_PROCESS.getExtendedName()));
         return mapper.modelToDto(repository.save(mapper.dtoToModel(documentDto)));
     }
 

@@ -1,6 +1,7 @@
 package ru.documents.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,10 +14,11 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "documents")
+@Table(name = "document")
 public class Document {
     /**
      * Номер документа.
@@ -60,5 +62,5 @@ public class Document {
      * Статус.
      */
     @Column(name = "status", nullable = false)
-    private String status;
+    private String statusCode;
 }

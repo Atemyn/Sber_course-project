@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[BUGFIX] Исправлена ошибка nginx: [emerg] open() &quot;/etc/nginx/conf.d/default.conf&quot; failed (1: Operation not permitted) при запуске ui">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/DocumentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceStoreImpl.java" afterDir="false" />
+    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[BUGFIX + FEATURE] Исправлены проблемы с подключением и работой с базой данных, написан кастомный маппер DocumentMapper">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/StatusEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/changelog/changes/v0001.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/changelog/changes/v0001.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceStoreImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/store/DocumentStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/ru/documents/controller/DocumentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/ru/documents/controller/DocumentControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
@@ -96,6 +97,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -286,7 +288,8 @@
       <workItem from="1699704232093" duration="7213000" />
       <workItem from="1699886921338" duration="5047000" />
       <workItem from="1699953630892" duration="6282000" />
-      <workItem from="1700043868570" duration="9709000" />
+      <workItem from="1700043868570" duration="11822000" />
+      <workItem from="1700128620464" duration="7390000" />
     </task>
     <task id="LOCAL-00001" summary="Создан шаблон курсового проекта">
       <created>1699374273562</created>
@@ -309,7 +312,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700057816730</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="[FEATURE] Добавлен pgAdmin к docker-compose.yml, создан DocumentMapper с использование MapStruct, написана новая имплементация DocumentServiceImpl, которая работает c DocumentRepository.">
+      <created>1700065225349</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700065225349</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,6 +340,8 @@
     <MESSAGE value="Создан шаблон курсового проекта" />
     <MESSAGE value="[FEATURE] Подключен liquidbase, сконфигурирован docker-compose.yml для клиента, сервера и базы данных, добавлен базовый Entity для Document" />
     <MESSAGE value="[BUGFIX] Исправлена ошибка nginx: [emerg] open() &quot;/etc/nginx/conf.d/default.conf&quot; failed (1: Operation not permitted) при запуске ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="[BUGFIX] Исправлена ошибка nginx: [emerg] open() &quot;/etc/nginx/conf.d/default.conf&quot; failed (1: Operation not permitted) при запуске ui" />
+    <MESSAGE value="[FEATURE] Добавлен pgAdmin к docker-compose.yml, создан DocumentMapper с использование MapStruct, написана новая имплементация DocumentServiceImpl, которая работает c DocumentRepository." />
+    <MESSAGE value="[BUGFIX + FEATURE] Исправлены проблемы с подключением и работой с базой данных, написан кастомный маппер DocumentMapper" />
+    <option name="LAST_COMMIT_MESSAGE" value="[BUGFIX + FEATURE] Исправлены проблемы с подключением и работой с базой данных, написан кастомный маппер DocumentMapper" />
   </component>
 </project>

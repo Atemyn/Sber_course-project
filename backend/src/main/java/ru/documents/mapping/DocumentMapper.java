@@ -1,13 +1,11 @@
 package ru.documents.mapping;
 
-import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants;
+import org.springframework.stereotype.Component;
 import ru.documents.controller.dto.DocumentDto;
 import ru.documents.entity.Document;
 
 import java.util.List;
 
-@Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface DocumentMapper {
     Document dtoToModel(DocumentDto documentDto);
 

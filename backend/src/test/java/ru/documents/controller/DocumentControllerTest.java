@@ -6,9 +6,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
+import ru.documents.service.DocumentServiceImpl;
 import ru.template.example.controller.AbstractWebMvcTest;
 import ru.documents.controller.dto.DocumentDto;
-import ru.documents.service.DocumentServiceStoreImpl;
 
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.mockito.ArgumentMatchers.any;
@@ -23,7 +23,7 @@ public class DocumentControllerTest extends AbstractWebMvcTest {
     private static final String ROUTE = "/documents";
 
     @MockBean
-    private DocumentServiceStoreImpl service;
+    private DocumentServiceImpl service;
 
     @Test
     public void shouldSuccessToPostWhenRequiredFieldsMaxLength() throws Exception {

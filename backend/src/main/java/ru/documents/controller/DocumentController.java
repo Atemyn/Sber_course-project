@@ -14,6 +14,7 @@ import ru.documents.controller.dto.IdDto;
 import ru.documents.controller.dto.IdsDto;
 import ru.documents.controller.dto.Status;
 import ru.documents.service.DocumentService;
+import ru.documents.service.DocumentServiceImpl;
 
 import java.util.List;
 
@@ -41,7 +42,6 @@ public class DocumentController {
             produces = MediaType.APPLICATION_JSON_VALUE)
     public DocumentDto send(@RequestBody IdDto id) {
         DocumentDto document = service.findById(id.getId());
-        document.setStatus(Status.of("IN_PROCESS", "В обработке"));
         return service.update(document);
     }
 
