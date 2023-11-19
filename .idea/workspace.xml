@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[BUGFIX + FEATURE] Исправлены проблемы с подключением и работой с базой данных, написан кастомный маппер DocumentMapper">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/StatusEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceStoreImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/store/DocumentStore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/ru/documents/controller/DocumentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/ru/documents/controller/DocumentControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +182,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="course-project:backend [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/backend" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="course-project:ui [npm_run_build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -234,21 +245,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="gradlew" type="ShConfigurationType" temporary="true">
-      <option name="SCRIPT_TEXT" value="" />
-      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
-      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/gradlew" />
-      <option name="SCRIPT_OPTIONS" value="" />
-      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
-      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="EXECUTE_IN_TERMINAL" value="true" />
-      <option name="EXECUTE_SCRIPT_FILE" value="true" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="course-project.backend.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.Application" />
@@ -267,9 +263,9 @@
       <list>
         <item itemvalue="Gradle.course-project:ui [npm_run_start]" />
         <item itemvalue="Gradle.course-project:backend [bootJar]" />
+        <item itemvalue="Gradle.course-project:backend [buildDependents]" />
         <item itemvalue="Gradle.DocumentControllerTest" />
         <item itemvalue="Gradle.course-project:ui [npm_run_build]" />
-        <item itemvalue="Shell Script.gradlew" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +285,10 @@
       <workItem from="1699886921338" duration="5047000" />
       <workItem from="1699953630892" duration="6282000" />
       <workItem from="1700043868570" duration="11822000" />
-      <workItem from="1700128620464" duration="7390000" />
+      <workItem from="1700128620464" duration="7498000" />
+      <workItem from="1700153890568" duration="1455000" />
+      <workItem from="1700155808223" duration="1405000" />
+      <workItem from="1700381065104" duration="2145000" />
     </task>
     <task id="LOCAL-00001" summary="Создан шаблон курсового проекта">
       <created>1699374273562</created>
@@ -319,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700065225349</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[BUGFIX + FEATURE] Исправлены проблемы с подключением и работой с базой данных, написан кастомный маппер DocumentMapper">
+      <created>1700140691024</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700140691024</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

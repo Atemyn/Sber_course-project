@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Data
@@ -18,18 +19,21 @@ public class DocumentDto {
     private Long id;
 
     /**
-     * Вид документа.
+     * Вид/наименование документа.
      */
+    @NotBlank(message = "Наименование документа не может быть пустым")
     private String type;
 
     /**
      * Организация.
      */
+    @NotBlank(message = "Название организации не может быть пустым")
     private String organization;
 
     /**
      * Описание.
      */
+    @NotBlank(message = "Описание документа не может быть пустым")
     private String description;
 
     /**
@@ -40,6 +44,7 @@ public class DocumentDto {
     /**
      * Пациент.
      */
+    @NotBlank(message = "Имя пациента не может быть пустым")
     private String patient;
 
     /**
