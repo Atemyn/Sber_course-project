@@ -1,6 +1,7 @@
 package ru.documents.service;
 
 import ru.documents.controller.dto.DocumentDto;
+import ru.documents.controller.dto.IdDto;
 
 import java.util.List;
 import java.util.Set;
@@ -30,10 +31,10 @@ public interface DocumentService {
 
     /**
      * Обновить документ
-     * @param documentDto документ
+     * @param idDto Номер документа
      * @return обновленный документ
      */
-    DocumentDto update(DocumentDto documentDto);
+    DocumentDto update(IdDto idDto);
 
     /**
      * Получить все документы

@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[FEATURE] Добавлена валидация основных полей для DocumentDto">
+    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[FEATURE] Zookeeper и брокер Kafka подключены и развёрнуты в докере">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/SchedulerConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaConsumerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaProducerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaTopicConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/InboxDocumentProcessingResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Inbox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Outbox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/InboxRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/OutboxRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/changelog/changes/v0001.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/changelog/changes/v0001.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +103,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -287,7 +306,7 @@
       <workItem from="1700128620464" duration="7498000" />
       <workItem from="1700153890568" duration="1455000" />
       <workItem from="1700155808223" duration="1405000" />
-      <workItem from="1700381065104" duration="3642000" />
+      <workItem from="1700381065104" duration="24586000" />
     </task>
     <task id="LOCAL-00001" summary="Создан шаблон курсового проекта">
       <created>1699374273562</created>
@@ -331,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700395877115</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[FEATURE] Zookeeper и брокер Kafka подключены и развёрнуты в докере">
+      <created>1700397403531</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700397403531</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +381,7 @@
     <MESSAGE value="[FEATURE] Добавлен pgAdmin к docker-compose.yml, создан DocumentMapper с использование MapStruct, написана новая имплементация DocumentServiceImpl, которая работает c DocumentRepository." />
     <MESSAGE value="[BUGFIX + FEATURE] Исправлены проблемы с подключением и работой с базой данных, написан кастомный маппер DocumentMapper" />
     <MESSAGE value="[FEATURE] Добавлена валидация основных полей для DocumentDto" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Добавлена валидация основных полей для DocumentDto" />
+    <MESSAGE value="[FEATURE] Zookeeper и брокер Kafka подключены и развёрнуты в докере" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Zookeeper и брокер Kafka подключены и развёрнуты в докере" />
   </component>
 </project>

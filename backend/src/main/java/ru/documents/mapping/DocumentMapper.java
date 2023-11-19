@@ -1,6 +1,5 @@
 package ru.documents.mapping;
 
-import org.springframework.stereotype.Component;
 import ru.documents.controller.dto.DocumentDto;
 import ru.documents.entity.Document;
 
