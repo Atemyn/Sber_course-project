@@ -36,7 +36,7 @@ public class OutboxServiceImpl implements OutboxService{
         }
 
         Outbox savedOutbox = repository.save(new Outbox(null, jsonPayload));
-        log.info("Payload was successfully saved to Outbox table. Payload: " + savedOutbox);
+        log.info("Payload was successfully saved to Outbox table. Payload: {}", savedOutbox);
         return savedOutbox;
     }
 

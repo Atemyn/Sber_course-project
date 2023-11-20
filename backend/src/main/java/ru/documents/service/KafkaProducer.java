@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.util.concurrent.ListenableFutureCallback;
 import ru.documents.entity.Outbox;
+import ru.documents.service.exception.KafkaSendingException;
 
 @Service
 @RequiredArgsConstructor
@@ -25,15 +26,14 @@ public class KafkaProducer {
                 kafkaTemplate.send(topicName, message.getId(), message);
         future.addCallback(new ListenableFutureCallback<>() {
             @Override
-            public void onFailure(@NonNull Throwable ex) {
-                log.warn(String.format("Error sending message %s to the topic %s. " +
-                        "Exception message: %s", message, topicName, ex.getMessage()));
+            public void onFailure(@NonNull Throwable e) {
+                throw new KafkaSendingException(String.format("Error sending message %s to the topic %s. " +
+                        "Exception message: %s", message, topicName, e.getMessage()), e);
             }
 
             @Override
             public void onSuccess(SendResult<Long, Outbox> result) {
-                log.info(String.format("Message %s was successfully sent to the topic %s.",
-                        message, topicName));
+                log.info("Message {} was successfully sent to the topic {}.", message, topicName);
             }
         });
     }

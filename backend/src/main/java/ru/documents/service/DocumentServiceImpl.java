@@ -80,13 +80,9 @@ public class DocumentServiceImpl implements DocumentService {
 
         document.setStatusCode(StatusEnum.IN_PROCESS.name());
         document = repository.save(document);
-        log.info(String.format("Document with id %d successfully updated it's status to %s",
-                document.getId(), document.getStatusCode()));
-        try {
-            outboxService.saveMessage(document);
-        } catch (PayloadToJsonProcessingException e) {
-            log.warn(e.getMessage());
-        }
+        log.info("Document with id {} successfully updated it's status to {}",
+                document.getId(), document.getStatusCode());
+        outboxService.saveMessage(document);
         return mapper.modelToDto(document);
     }
 
@@ -94,7 +90,7 @@ public class DocumentServiceImpl implements DocumentService {
     @Transactional
     public List<DocumentDto> findAll() {
         List<DocumentDto> dtos = mapper.toListDto(repository.findAll());
-        log.info(String.format("All documents were received from repository. Documents: %s", dtos));
+        log.info("All documents were received from repository. Documents: {}", dtos);
         return dtos;
     }
 
@@ -102,8 +98,8 @@ public class DocumentServiceImpl implements DocumentService {
     @Transactional
     public DocumentDto findById(Long id) {
         DocumentDto documentDto = Optional.of(getById(id)).map(mapper::modelToDto).get();
-        log.info(String.format("Document with id %d was received from repository. Document: %s",
-                documentDto.getId(), documentDto));
+        log.info("Document with id {} was received from repository. Document: {}",
+                documentDto.getId(), documentDto);
         return documentDto;
     }
 
@@ -122,11 +118,12 @@ public class DocumentServiceImpl implements DocumentService {
             Document currentDocument = documentsByIds.get(i);
             if (currentDocument.getStatusCode().equals(StatusEnum.IN_PROCESS.name())) {
                 documentsByIds.get(i).setStatusCode(allUnreadMessages.get(i).getPayload().getStatusCode());
-                log.info(String.format("Document with id %d received new status: %s",
-                        currentDocument.getId(), allUnreadMessages.get(i).getPayload().getStatusCode()));
+                log.info("Document with id {} received new status: {}",
+                        currentDocument.getId(), allUnreadMessages.get(i).getPayload().getStatusCode());
             }
             else {
-                log.warn(String.format("Document with id %d doesn't have a status %s so it can't be processed",
+                throw new WrongDocumentStatusException(
+                        String.format("Document with id %d doesn't have a status %s so it can't be processed",
                         currentDocument.getId(), StatusEnum.IN_PROCESS.name()));
             }
         }

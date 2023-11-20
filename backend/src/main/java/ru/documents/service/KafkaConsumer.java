@@ -9,7 +9,6 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 import ru.documents.controller.dto.InboxDocumentProcessingResult;
 import ru.documents.entity.Inbox;
-import ru.documents.service.exception.InboxDuplicateSaveAttemptException;
 
 import java.util.Optional;
 
@@ -22,12 +21,7 @@ public class KafkaConsumer {
     @KafkaListener(topics = "${spring.kafka.topic-names.inbox}")
     public Optional<Inbox> consumeInbox(@Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) Long messageId,
                                         @Payload InboxDocumentProcessingResult documentProcessingResult) {
-        try {
-            Inbox inbox = inboxService.save(new Inbox(messageId, documentProcessingResult));
-            return Optional.of(inbox);
-        } catch (InboxDuplicateSaveAttemptException e) {
-            log.warn(e.getMessage());
-        }
-        return Optional.empty();
+        Inbox inbox = inboxService.save(new Inbox(messageId, documentProcessingResult));
+        return Optional.of(inbox);
     }
 }

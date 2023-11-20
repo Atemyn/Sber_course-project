@@ -7,7 +7,7 @@
             <charset>UTF-8</charset>
         </encoder>
     </appender>
-    <logger name="ru.template.example">
+    <logger name="ru.documents.aspect">
         <level value="DEBUG"/>
     </logger>
     <root level="INFO">

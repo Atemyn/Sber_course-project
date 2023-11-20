@@ -26,7 +26,7 @@ public class InboxServiceImpl implements InboxService{
         }
 
         Inbox savedInbox = repository.save(inbox);
-        log.info("Payload was successfully saved to Inbox table. Payload: " + savedInbox);
+        log.info("Payload was successfully saved to Inbox table. Payload: {}", savedInbox);
         return savedInbox;
     }
 
@@ -34,7 +34,7 @@ public class InboxServiceImpl implements InboxService{
     @Transactional
     public List<Inbox> getAllUnreadMessages() {
         List<Inbox> allByIsRead = repository.findAllByIsRead(false);
-        log.info("Getting unread objects from Inbox table result: " + allByIsRead);
+        log.info("Getting unread objects from Inbox table result: {}", allByIsRead);
         return allByIsRead;
     }
 
@@ -46,7 +46,7 @@ public class InboxServiceImpl implements InboxService{
             message.setRead(true);
         }
         List<Inbox> inboxes = repository.saveAll(unreadMessages);
-        log.info("Objects from Inbox table were successfully read. Objects: " + inboxes);
+        log.info("Objects from Inbox table were successfully read. Objects: {}", inboxes);
         return inboxes;
     }
 }
