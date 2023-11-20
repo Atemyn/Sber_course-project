@@ -10,8 +10,18 @@ import org.springframework.context.annotation.Primary;
 
 import java.text.SimpleDateFormat;
 
+/**
+ * Класс конфигурации {@link ObjectMapper} для маппинга объектов в JSON.
+ *
+ * @author Артем Дружинин.
+ */
 @Configuration
 public class JacksonConfiguration {
+    /**
+     * Конфигурация бина {@link ObjectMapper}.
+     *
+     * @return Возвращает сконфигурированный маппер.
+     */
     @Bean
     @Primary
     public ObjectMapper objectMapper() {

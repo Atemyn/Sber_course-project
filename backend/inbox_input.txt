@@ -1,4 +1,4 @@
 {
-  "documentId": 3,
-  "statusCode": "ACCEPTED"
+  "documentId": 1,
+  "statusCode": "REJECTED"
 }

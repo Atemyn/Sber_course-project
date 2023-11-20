@@ -13,6 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
+/**
+ * Сущность для документа, которая маппится на существующую сущность документа в базе данных.
+ *
+ * @author Артем Дружинин.
+ */
 @Data
 @Builder
 @AllArgsConstructor

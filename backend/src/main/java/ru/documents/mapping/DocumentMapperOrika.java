@@ -9,10 +9,20 @@ import ru.documents.controller.dto.DocumentDto;
 import ru.documents.controller.dto.Status;
 import ru.documents.controller.dto.StatusEnum;
 import ru.documents.entity.Document;
+import ru.documents.service.exception.WrongDocumentStatusException;
 
+/**
+ * Маппер для {@link Document} и {@link DocumentDto}.
+ *
+ * @author Артем Дружинин.
+ */
 @Component
-public class DocumentMapperOrika extends ConfigurableMapper
-{
+public class DocumentMapperOrika extends ConfigurableMapper {
+    /**
+     * Метод для конфигурации фабрики мапперов.
+     *
+     * @param factory Фабрика мапперов.
+     */
     @Override
     protected void configure(MapperFactory factory) {
         factory.classMap(DocumentDto.class, Document.class)
@@ -26,8 +36,13 @@ public class DocumentMapperOrika extends ConfigurableMapper
 
                     @Override
                     public void mapBtoA(Document document, DocumentDto documentDto, MappingContext context) {
-                        documentDto.setStatus(Status.of(document.getStatusCode(),
-                                StatusEnum.valueOf(document.getStatusCode()).getExtendedName()));
+                        try {
+                            documentDto.setStatus(Status.of(document.getStatusCode(),
+                                    StatusEnum.valueOf(document.getStatusCode()).getExtendedName()));
+                        } catch (IllegalArgumentException e) {
+                            throw new WrongDocumentStatusException("Error when mapping Document." +
+                                    "Wrong status code: " + document.getStatusCode(), e);
+                        }
                     }
                 })
                 .byDefault()

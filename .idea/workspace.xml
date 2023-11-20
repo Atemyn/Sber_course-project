@@ -4,15 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[FEATURE] Добавлена аннотация @Length для валидации полей DocumentDto">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapperOrika.java" afterDir="false" />
+    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[FEATURE] Собственноручно написанный маппер заменён на маппер от Orika">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/MessageNotFoundException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/inbox_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/inbox_input.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapperImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/CustomRestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/CustomRestExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/JacksonConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/JacksonConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/SchedulerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/SchedulerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/WebConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/WebConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaProducerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaProducerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaTopicConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/kafka/KafkaTopicConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/aspect/LoggingAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/aspect/LoggingAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/DocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/DocumentDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/IdsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/InboxDocumentProcessingResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/InboxDocumentProcessingResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/StatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/controller/dto/StatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Inbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Inbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Outbox.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/entity/Outbox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapperOrika.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/mapping/DocumentMapperOrika.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/DocumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/DocumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/InboxRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/InboxRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/OutboxRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/repository/OutboxRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/DocumentNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/DocumentNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/InboxDuplicateSaveAttemptException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/InboxDuplicateSaveAttemptException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/KafkaSendingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/KafkaSendingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/PayloadToJsonProcessingException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/PayloadToJsonProcessingException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/WrongDocumentStatusException.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/WrongDocumentStatusException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +329,7 @@
       <workItem from="1700153890568" duration="1455000" />
       <workItem from="1700155808223" duration="1405000" />
       <workItem from="1700381065104" duration="24971000" />
-      <workItem from="1700476325663" duration="20452000" />
+      <workItem from="1700476325663" duration="32361000" />
     </task>
     <task id="LOCAL-00001" summary="Создан шаблон курсового проекта">
       <created>1699374273562</created>
@@ -390,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700503327708</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[FEATURE] Собственноручно написанный маппер заменён на маппер от Orika">
+      <created>1700506209491</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700506209491</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,6 +460,7 @@
     <MESSAGE value="[FEATURE] Добавлено логирование исключений и логирование для уровня DEBUG для классов контроллеров и сервисов через Spring AOP" />
     <MESSAGE value="[FEATURE] Дописан обработчик исключений CustomRestExceptionHandler" />
     <MESSAGE value="[FEATURE] Добавлена аннотация @Length для валидации полей DocumentDto" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Добавлена аннотация @Length для валидации полей DocumentDto" />
+    <MESSAGE value="[FEATURE] Собственноручно написанный маппер заменён на маппер от Orika" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Собственноручно написанный маппер заменён на маппер от Orika" />
   </component>
 </project>

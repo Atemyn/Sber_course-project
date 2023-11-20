@@ -13,6 +13,7 @@ import java.util.Arrays;
 
 /**
  * Аспект для логирования выполнения методов репозиториев, сервисов и контроллеров.
+ *
  * @author Артем Дружинин.
  */
 @Aspect
@@ -42,7 +43,7 @@ public class LoggingAspect {
      * в методах всех репозиториев, сервисов и контроллеров.
      *
      * @param joinPoint Точка, из которой вызван метод логирования.
-     * @param e Исключение
+     * @param e         Исключение
      */
     @AfterThrowing(pointcut = "springBeanPointcut() && applicationPackagePointcut()", throwing = "e")
     public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {

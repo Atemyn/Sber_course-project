@@ -14,11 +14,26 @@ import ru.documents.entity.Outbox;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс конфигурации для производителей Kafka.
+ *
+ * @author Артем Дружинин.
+ */
 @Configuration
 public class KafkaProducerConfig {
+    /**
+     * Адрес брокера Kafka, который производители используют для связи с кластером Kafka.
+     */
     @Value(value = "${spring.kafka.bootstrap-servers}")
     private String bootstrapAddress;
 
+    /**
+     * Конфигурация фабрики производителей Kafka.
+     *
+     * @return Возвращает сконфигурированную фабрику производителей Kafka.
+     * Первое значение в дженерике <> означает тип ключа отправляемого сообщения,
+     * а второе - тип основной части сообщения.
+     */
     @Bean
     public ProducerFactory<Long, Outbox> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
@@ -34,6 +49,14 @@ public class KafkaProducerConfig {
         return new DefaultKafkaProducerFactory<>(configProps);
     }
 
+    /**
+     * Создание шаблона производителя Kafka для
+     * использования высокоуровневых методов по отправке сообщений в Kafka.
+     *
+     * @return Возвращает шаблон, созданный на основе фабрики {@link ProducerFactory}, настроенной ранее.
+     * Первое значение в дженерике <> означает тип ключа отправляемого сообщения,
+     * а второе - тип основной части сообщения.
+     */
     @Bean
     public KafkaTemplate<Long, Outbox> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());

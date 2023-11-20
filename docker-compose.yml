@@ -21,6 +21,7 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db/documents_db
     depends_on:
       - db
+      - kafka-1
   db:
     container_name: db
     image: postgres:16-alpine

@@ -4,6 +4,11 @@ import lombok.Data;
 
 import java.util.Set;
 
+/**
+ * Класс для представления множества номеров документов.
+ *
+ * @author Артем Дружинин.
+ */
 @Data
 public class IdsDto {
     /**

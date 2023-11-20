@@ -28,6 +28,8 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 
 /**
  * Обработчик REST API исключений.
+ *
+ * @author Артем Дружинин.
  */
 @ControllerAdvice
 public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
@@ -36,9 +38,9 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
     /**
      * Обработчик ошибки валидации (неверных аргументов метода).
      *
-     * @param ex Исключение об ошибке валидации аргументов метода.
+     * @param ex      Исключение об ошибке валидации аргументов метода.
      * @param headers HTTP-заголовки, которые будут записаны в HTTP-ответ.
-     * @param status Статус HTTP-ответа.
+     * @param status  Статус HTTP-ответа.
      * @param request Текущий веб-запрос.
      * @return Возвращает ответ-представление о плохом запросе.
      */
@@ -64,9 +66,9 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
     /**
      * Обработчик нечитаемого HTTP сообщения.
      *
-     * @param ex Исключение о нечитаемом HTTP сообщении.
+     * @param ex      Исключение о нечитаемом HTTP сообщении.
      * @param headers HTTP-заголовки, которые будут записаны в HTTP-ответ.
-     * @param status Статус HTTP-ответа.
+     * @param status  Статус HTTP-ответа.
      * @param request Текущий веб-запрос.
      * @return Возвращает ответ-представление о плохом запросе.
      */
@@ -120,7 +122,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
      * @return Возвращает ответ-представление об ошибке на сервере.
      */
     @ExceptionHandler({InboxDuplicateSaveAttemptException.class})
-    public ResponseEntity<RestApiError>handleInboxDuplicateSaveAttemptException(
+    public ResponseEntity<RestApiError> handleInboxDuplicateSaveAttemptException(
             final InboxDuplicateSaveAttemptException ex) {
         logger.error("Error when trying to save duplicate kafka message", ex);
         RestApiError restApiError =
@@ -136,7 +138,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
      * @return Возвращает ответ-представление об ошибке на сервере.
      */
     @ExceptionHandler({PayloadToJsonProcessingException.class})
-    public ResponseEntity<RestApiError>handlePayloadToJsonProcessingException(
+    public ResponseEntity<RestApiError> handlePayloadToJsonProcessingException(
             final PayloadToJsonProcessingException ex) {
         logger.error("Error when processing object to json format", ex);
         RestApiError restApiError =
@@ -149,7 +151,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
     /**
      * Обработчик остальных исключений на сервере.
      *
-     * @param ex Вызванное исключение.
+     * @param ex      Вызванное исключение.
      * @param request Веб-запрос.
      * @return Возвращает ответ-представление об ошибке на сервере.
      */
@@ -163,6 +165,8 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
 
     /**
      * Класс для представления ошибки REST API.
+     *
+     * @author Артем Дружинин.
      */
     @Data
     @AllArgsConstructor

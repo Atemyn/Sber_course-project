@@ -16,15 +16,33 @@ import ru.documents.controller.dto.InboxDocumentProcessingResult;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Класс конфигурации для потребителя Kafka.
+ *
+ * @author Артем Дружинин.
+ */
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
 
+    /**
+     * Адрес брокера Kafka, который потребители используют для связи с кластером Kafka.
+     */
     @Value(value = "${spring.kafka.bootstrap-servers}")
     private String bootstrapAddress;
 
+    /**
+     * Название группы потребителей.
+     */
     private final static String CONSUMER_GROUP_ID = "consumer-group-id-1";
 
+    /**
+     * Конфигурация фабрики потребителей Kafka.
+     *
+     * @return Возвращает сконфигурированную фабрику потребителей Kafka.
+     * Первое значение в дженерике <> означает тип ключа получаемого сообщения,
+     * а второе - тип основной части сообщения.
+     */
     public ConsumerFactory<Long,
             InboxDocumentProcessingResult> consumerFactory() {
 
@@ -48,6 +66,13 @@ public class KafkaConsumerConfig {
                 new JsonDeserializer<>(InboxDocumentProcessingResult.class));
     }
 
+    /**
+     * Конфигурация фабрики для KafkaListener.
+     *
+     * @return Возвращает сконфигурированную фабрику KafkaListener'ов.
+     * Первое значение в дженерике <> означает тип ключа получаемого сообщения,
+     * а второе - тип основной части сообщения.
+     */
     @Bean
     public ConcurrentKafkaListenerContainerFactory<Long,
             InboxDocumentProcessingResult> kafkaListenerContainerFactory() {
