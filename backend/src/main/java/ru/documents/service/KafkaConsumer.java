@@ -1,6 +1,7 @@
 package ru.documents.service;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
@@ -8,11 +9,13 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 import ru.documents.controller.dto.InboxDocumentProcessingResult;
 import ru.documents.entity.Inbox;
+import ru.documents.service.exception.InboxDuplicateSaveAttemptException;
 
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class KafkaConsumer {
     private final InboxService inboxService;
 
@@ -22,9 +25,8 @@ public class KafkaConsumer {
         try {
             Inbox inbox = inboxService.save(new Inbox(messageId, documentProcessingResult));
             return Optional.of(inbox);
-            // TODO Добавить обработку кастомного исключения
-        } catch (RuntimeException e) {
-
+        } catch (InboxDuplicateSaveAttemptException e) {
+            log.warn(e.getMessage());
         }
         return Optional.empty();
     }

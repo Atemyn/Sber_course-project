@@ -3,16 +3,19 @@ package ru.documents.service;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.documents.entity.Outbox;
 import ru.documents.repository.OutboxRepository;
+import ru.documents.service.exception.PayloadToJsonProcessingException;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class OutboxServiceImpl implements OutboxService{
 
     private final ObjectMapper mapper;
@@ -28,11 +31,13 @@ public class OutboxServiceImpl implements OutboxService{
         try {
             jsonPayload = mapper.writeValueAsString(payload);
         } catch (JsonProcessingException e) {
-            // TODO Добавить кастомное исключение.
-            throw new RuntimeException(e);
+            throw new PayloadToJsonProcessingException(
+                    String.format("Error when processing object %s to json format", payload), e);
         }
 
-        return repository.save(new Outbox(null, jsonPayload));
+        Outbox savedOutbox = repository.save(new Outbox(null, jsonPayload));
+        log.info("Payload was successfully saved to Outbox table. Payload: " + savedOutbox);
+        return savedOutbox;
     }
 
     @Override
