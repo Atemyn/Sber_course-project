@@ -191,7 +191,6 @@ public class DocumentServiceImpl implements DocumentService {
                         currentDocument.getId(), currentMessage.getPayload().getStatusCode());
             } else {
                 inboxService.setMessageAsRead(currentMessage.getId());
-                log.info("SAVED READ 2 id: {}", currentMessage.getId());
                 throw new WrongDocumentStatusException(
                         String.format("Document with id: %d current status: %s or new status: %s is not valid",
                                 currentDocument.getId(), StatusEnum.IN_PROCESS.name(),

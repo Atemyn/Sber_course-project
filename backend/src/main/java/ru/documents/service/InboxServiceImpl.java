@@ -98,7 +98,6 @@ public class InboxServiceImpl implements InboxService {
 
         Inbox message = messageOptional.get();
         message.setRead(true);
-        log.info("SAVED READ 1 id: {}", messageId);
 
         return repository.save(message);
     }
