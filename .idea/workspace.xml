@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[FEATURE] Добавлено логирование в основных классах сервисов + написаны специальные классы-исключения">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/aspect/LoggingAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/exception/KafkaSendingException.java" afterDir="false" />
+    <list default="true" id="6fb7de03-3b9a-4a0f-b918-1d06583f3a11" name="Changes" comment="[FEATURE] Добавлено логирование исключений и логирование для уровня DEBUG для классов контроллеров и сервисов через Spring AOP">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/inbox_input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/inbox_input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/DocumentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/InboxServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/KafkaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/documents/service/OutboxServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/logback-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/CustomRestExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/ru/configuration/CustomRestExceptionHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -302,7 +291,7 @@
       <workItem from="1700153890568" duration="1455000" />
       <workItem from="1700155808223" duration="1405000" />
       <workItem from="1700381065104" duration="24971000" />
-      <workItem from="1700476325663" duration="14160000" />
+      <workItem from="1700476325663" duration="16566000" />
     </task>
     <task id="LOCAL-00001" summary="Создан шаблон курсового проекта">
       <created>1699374273562</created>
@@ -374,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700483908297</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[FEATURE] Добавлено логирование исключений и логирование для уровня DEBUG для классов контроллеров и сервисов через Spring AOP">
+      <created>1700499335486</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1700499335486</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +398,7 @@
     <MESSAGE value="[FEATURE] Написаны конфиги для кафки, добавлены 2 сущности - inbox и outbox и сделаны для них репозитории и сервисы, обновлён скрип liquidbase, написаны класс для consumer'а и producer'а" />
     <MESSAGE value="[FEATURE] Добавлен txt файл-шаблон для ручного добавления сообщения в топик inbox кафки" />
     <MESSAGE value="[FEATURE] Добавлено логирование в основных классах сервисов + написаны специальные классы-исключения" />
-    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Добавлено логирование в основных классах сервисов + написаны специальные классы-исключения" />
+    <MESSAGE value="[FEATURE] Добавлено логирование исключений и логирование для уровня DEBUG для классов контроллеров и сервисов через Spring AOP" />
+    <option name="LAST_COMMIT_MESSAGE" value="[FEATURE] Добавлено логирование исключений и логирование для уровня DEBUG для классов контроллеров и сервисов через Spring AOP" />
   </component>
 </project>
