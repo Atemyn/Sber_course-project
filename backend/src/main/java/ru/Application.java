@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 public class Application {
 
     public static void main(String[] args) {
-        Logger.getLogger(String.valueOf(Application.class)).log(Level.INFO, "Started!!!");
         SpringApplication.run(Application.class, args);
     }
 }

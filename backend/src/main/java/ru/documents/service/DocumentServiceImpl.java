@@ -2,6 +2,7 @@ package ru.documents.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import ma.glasnost.orika.impl.ConfigurableMapper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -11,10 +12,8 @@ import ru.documents.controller.dto.Status;
 import ru.documents.controller.dto.StatusEnum;
 import ru.documents.entity.Document;
 import ru.documents.entity.Inbox;
-import ru.documents.mapping.DocumentMapper;
 import ru.documents.repository.DocumentRepository;
 import ru.documents.service.exception.DocumentNotFoundException;
-import ru.documents.service.exception.PayloadToJsonProcessingException;
 import ru.documents.service.exception.WrongDocumentStatusException;
 
 import java.util.Date;
@@ -27,7 +26,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Slf4j
 public class DocumentServiceImpl implements DocumentService {
-    private final DocumentMapper mapper;
+    private final ConfigurableMapper mapper;
 
     private final DocumentRepository repository;
 
@@ -42,8 +41,8 @@ public class DocumentServiceImpl implements DocumentService {
         documentDto.setDate(new Date());
         documentDto.setStatus(Status.of(StatusEnum.NEW.name(),
                 StatusEnum.NEW.getExtendedName()));
-        documentDto = mapper.modelToDto(repository.save(
-                mapper.dtoToModel(documentDto)));
+        documentDto = mapper.map(repository.save(
+                mapper.map(documentDto, Document.class)), DocumentDto.class);
         log.info("Document was successfully saved. Document: " + documentDto);
         return documentDto;
     }
@@ -83,13 +82,15 @@ public class DocumentServiceImpl implements DocumentService {
         log.info("Document with id {} successfully updated it's status to {}",
                 document.getId(), document.getStatusCode());
         outboxService.saveMessage(document);
-        return mapper.modelToDto(document);
+        return mapper.map(document, DocumentDto.class);
     }
 
     @Override
     @Transactional
     public List<DocumentDto> findAll() {
-        List<DocumentDto> dtos = mapper.toListDto(repository.findAll());
+        List<DocumentDto> dtos =
+                repository.findAll().stream()
+                .map(doc -> mapper.map(doc, DocumentDto.class)).collect(Collectors.toList());
         log.info("All documents were received from repository. Documents: {}", dtos);
         return dtos;
     }
@@ -97,7 +98,8 @@ public class DocumentServiceImpl implements DocumentService {
     @Override
     @Transactional
     public DocumentDto findById(Long id) {
-        DocumentDto documentDto = Optional.of(getById(id)).map(mapper::modelToDto).get();
+        DocumentDto documentDto = Optional.of(getById(id))
+                .map(doc -> mapper.map(doc, DocumentDto.class)).get();
         log.info("Document with id {} was received from repository. Document: {}",
                 documentDto.getId(), documentDto);
         return documentDto;
