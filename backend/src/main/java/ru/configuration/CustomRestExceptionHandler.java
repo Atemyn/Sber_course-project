@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import ru.documents.service.exception.DocumentFieldsNotValidException;
 import ru.documents.service.exception.DocumentNotFoundException;
 import ru.documents.service.exception.InboxDuplicateSaveAttemptException;
 import ru.documents.service.exception.PayloadToJsonProcessingException;
@@ -61,6 +62,22 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
         }
         RestApiError restApiError = new RestApiError("Validation failed", errors);
         return handleExceptionInternal(ex, restApiError, headers, BAD_REQUEST, request);
+    }
+
+    /**
+     * Обработчик исключения, выбрасываемого при валидации неверных полей документа.
+     *
+     * @param ex Исключение о некорректных полях документа.
+     * @return Возвращает ответ-представление о плохом запросе.
+     */
+    @ExceptionHandler({DocumentFieldsNotValidException.class})
+    public ResponseEntity<RestApiError> handleDocumentFieldsNotValidException(
+            final DocumentFieldsNotValidException ex) {
+        logger.error("Document has invalid fields", ex);
+        RestApiError restApiError =
+                new RestApiError("Document has invalid fields",
+                        List.of(ex.getLocalizedMessage()));
+        return new ResponseEntity<>(restApiError, new HttpHeaders(), BAD_REQUEST);
     }
 
     /**

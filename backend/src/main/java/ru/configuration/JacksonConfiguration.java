@@ -30,7 +30,25 @@ public class JacksonConfiguration {
         mapper.registerModule(new JavaTimeModule());
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        mapper.setDateFormat(new SimpleDateFormat());
+        mapper.setDateFormat(new SimpleDateFormat("dd.MM.yyyy"));
+
+        return mapper;
+    }
+
+    /**
+     * Конфигурация бина {@link ObjectMapper}, который будет использоваться для тестирования.
+     * Отличается от Primary бина тем, что не устанавливает свойство
+     * {@code mapper.setDateFormat(new SimpleDateFormat())}
+     *
+     * @return Возвращает сконфигурированный тестовый маппер.
+     */
+    @Bean
+    public ObjectMapper testObjectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+
+        mapper.registerModule(new JavaTimeModule());
+        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
         return mapper;
     }

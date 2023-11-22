@@ -2,6 +2,7 @@ package ru.documents.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import ru.documents.controller.dto.DocumentDto;
 import ru.documents.controller.dto.IdDto;
 import ru.documents.controller.dto.IdsDto;
 import ru.documents.service.DocumentService;
+import ru.documents.service.exception.DocumentFieldsNotValidException;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -41,11 +43,15 @@ public class DocumentController {
      * @param dto Документ, который нужно сохранить. <br>
      *            Аннотация {@link Valid} проверяет корректность введённых пользователем полей.
      * @return Возвращает сохраненный документ.
+     * @throws DocumentFieldsNotValidException при валидации неверных полей документа.
      */
     @PostMapping(
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public DocumentDto save(@Valid @RequestBody DocumentDto dto) {
+    public DocumentDto save(@Valid @RequestBody DocumentDto dto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            throw new DocumentFieldsNotValidException("Error validating received document fields");
+        }
         return service.save(dto);
     }
 

@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
         "ru.*"
 })
 @EntityScan(basePackages = "ru.documents.entity")
-@EnableJpaRepositories(basePackages = "ru.documents.repository")
+//@EnableJpaRepositories(basePackages = "ru.documents.repository")
 public class Application {
 
     public static void main(String[] args) {

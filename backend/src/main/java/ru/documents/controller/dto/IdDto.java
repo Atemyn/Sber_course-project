@@ -1,6 +1,8 @@
 package ru.documents.controller.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Класс для представления номера документа.
@@ -8,6 +10,8 @@ import lombok.Data;
  * @author Артем Дружинин.
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class IdDto {
     /**
      * Номер документа.
